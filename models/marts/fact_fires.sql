@@ -1,6 +1,6 @@
 select
     h.fire_id,
-    h.fire_year,
+    cast(h.fire_year as string)  as fire_year,
     h.cause,
     h.fire_size_acres,
     h.fire_size_class,
