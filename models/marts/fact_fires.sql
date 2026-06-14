@@ -1,6 +1,5 @@
 select
     h.fire_id,
-    h.fire_name,
     h.fire_year,
     h.cause,
     h.fire_size_acres,
@@ -8,7 +7,6 @@ select
     h.latitude,
     h.longitude,
     h.state,
-    h.county,
     h.source,
     l.location_id
 from {{ ref('stg_historical_fires') }} h
@@ -17,15 +15,13 @@ left join {{ ref('dim_location') }} l
 union all
 select
     cast(null as int64)     as fire_id,
-    cast(null as string)    as fire_name,
-    s.fire_year,
+    cast(null as string)    as fire_year,
     cast(null as string)    as cause,
     cast(null as float64)   as fire_size_acres,
     cast(null as string)    as fire_size_class,
     s.latitude,
     s.longitude,
     cast(null as string)    as state,
-    cast(null as string)    as county,
     s.source,
     l.location_id
 from {{ ref('stg_fire_streaming') }} s
