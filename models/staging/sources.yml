@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: wildfire_data
+    database: fire-pipeline
+    schema: wildfire_data
+    tables:
+      - name: historical_fires
+      - name: fire_streaming
+      - name: weather_streaming

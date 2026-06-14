@@ -1,0 +1,22 @@
+select
+    cast(null as int64)     as fire_id,
+    cast(null as string)    as fire_name,
+    extract(year from current_date()) as fire_year,
+    cast(null as float64)   as discovery_date_julian,
+    cast(null as int64)     as discovery_day_of_year,
+    cast(null as string)    as cause,
+    cast(null as float64)   as fire_size_acres,
+    cast(null as string)    as fire_size_class,
+    latitude,
+    longitude,
+    cast(null as string)    as state,
+    cast(null as string)    as county,
+    cast(null as string)    as owner,
+    brightness,
+    confidence,
+    frp,
+    daynight,
+    acq_date,
+    ingestion_time,
+    'streaming'             as source
+from {{ source('wildfire_data', 'fire_streaming') }}
