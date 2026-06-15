@@ -1,0 +1,26 @@
+version: 2
+models:
+  - name: stg_historical_fires
+    columns:
+      - name: fire_id
+        tests: [not_null, unique]
+      - name: fire_year
+        tests: [not_null]
+      - name: latitude
+        tests: [not_null]
+      - name: longitude
+        tests: [not_null]
+      - name: fire_size_acres
+        tests: [not_null]
+  - name: stg_fire_streaming
+    columns:
+      - name: latitude
+        tests: [not_null]
+      - name: longitude
+        tests: [not_null]
+  - name: stg_fire_weather
+    columns:
+      - name: latitude
+        tests: [not_null]
+      - name: longitude
+        tests: [not_null]
