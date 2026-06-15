@@ -25,4 +25,8 @@ models:
           - relationships:
               arguments:
                 to: ref('dim_location')
+<<<<<<< HEAD
                 field: location_id
+=======
+                field: location_id
+>>>>>>> f97852f050521b29bf65dfec33dac11716ca8e16
